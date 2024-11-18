@@ -16,8 +16,6 @@ STATE='0' #State 0 for un-log in user and State 1 for log in person
 DFCustomer=DF.loc[DF["Tipe User"]=="Customer"]
 DFSeller=DF.loc[DF["Tipe User"]=="Seller"]
 DFADMIN=DF.loc[DF["Tipe User"]=="ADMIN"]
-#print(DF.loc["Ayuma"].values)
-#print(DF.loc[DF["Tipe User"]=="Seller"])
 
 def writeLog(username: str, user_type: str):
     """Write the login time of the user, using Indonesia WIB time"""
@@ -25,7 +23,6 @@ def writeLog(username: str, user_type: str):
     with open("algo_dan_pemograman1\\Projek_Akhir\\log_history.csv", mode="a") as f :
         f.write(f"{username},{user_type},{time_wib}\n")
     print("log has been written")
-    #return time_wib
 
 def getUserData(mode: str)-> list:
     """Get all of the user data
@@ -45,8 +42,6 @@ def signUp(user_type: str, mode: str, isSeller: bool=False)-> None:
         sellerData=getSellerData()
         with open("algo_dan_pemograman1\\Projek_Akhir\\data_seller.csv", "a") as f:
             f.write(f'{data[3]},"{sellerData[0]}","{sellerData[1]}","{sellerData[1]}"\n')
-    #print(f"Nama Lengkap\t: {data[0]}\nAlamat\t\t: {data[1]}\nE-Mail\t\t: {data[2]}\n{mode}\t: {data[3]}\nPassword\t: {data[4]}")
-    #df=pd.DataFrame([[user_fullName, user_address, user_email, user_username, user_password]], columns=["Nama Lengkap", "Alamat", "E-Mail", "Username", "Password"],)
     with open("algo_dan_pemograman1\\Projek_Akhir\\data_user.csv", 'a') as f:
        f.write(f"{data[0]},{data[1]},{data[2]},{data[3]},{data[4]},{user_type}\n")
 
@@ -304,37 +299,8 @@ def firstPage():
 def main():
     firstPage()
 
-
 def correctDataSeller(df: pd.DataFrame)->pd.DataFrame:
-    #df=df.map(eval, )
-    #print(df[["Tersedia", "Dipesan", "Terjual"]].values)
-    #print()
-    #print(df["Tersedia"])
-    #return df
+    #make code here
     pass
     
 main()
-#signUp('Customer', 'Nama Toko', isSeller=True)
-
-#searchProduct("Tatang")
-#shoppingPage("Bambang")
-#print(DFSELLERDATA["Tersedia"])
-#main()
-#homePageChoice("Saya")
-#DFSELLERDATA=correctDataSeller(DFSELLERDATA.set_index("Username", drop=False))
-#order=printItemSeller("Bagus Maragus")
-#printItemSeller("")
-#print(DFSELLERDATA)
-#print(DFSELLERDATA.iloc['Bagus Maragus'])
-#df=pd.read_csv("algo_dan_pemograman1\\Projek_Akhir\\data_seller.csv")
-#print(df)
-#correctDataSeller(df)
-# df.info()
-#Accessing dictionary from data_seller using eval function
-#print(eval(df.iloc[0,1]).keys())
-#main()
-#print(DF.index)
-#print(DF)
-#deleteData("ebdbdu")
-#print(DF)
-#print('Ayum' in DF["Username"])
